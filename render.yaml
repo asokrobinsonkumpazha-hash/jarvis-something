@@ -1,0 +1,14 @@
+services:
+  - type: web
+    name: jarvis-router
+    runtime: docker
+    plan: free
+    dockerfilePath: ./Dockerfile
+    healthCheckPath: /
+    envVars:
+      - key: ENCRYPTION_KEY
+        generateValue: true
+      - key: PORT
+        value: 3001
+      - key: NODE_ENV
+        value: production
