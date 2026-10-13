@@ -1,9 +1,10 @@
 services:
   - type: web
     name: jarvis-router
-    runtime: docker
+    runtime: image
+    image:
+      url: ghcr.io/tashfeenahmed/freellmapi:latest
     plan: free
-    dockerfilePath: ./Dockerfile
     healthCheckPath: /
     envVars:
       - key: ENCRYPTION_KEY
